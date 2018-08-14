@@ -61,7 +61,8 @@ class ForceChangePassword extends Component {
   }
 
   componentWillMount() {
-    this.props.init()
+  //  this.props.init()
+  window.location = this.state.route.loc;
   }
 
   changePassword = values => {

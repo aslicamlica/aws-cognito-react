@@ -3,6 +3,9 @@ import PropTypes from 'prop-types'
 import { Field, reduxForm } from 'redux-form'
 import validator from 'validator'
 
+import {Button} from 'react-router';
+
+
 import { TextField } from 'redux-form-material-ui'
 
 import { FlatButton, RaisedButton, Paper } from 'material-ui'
@@ -14,6 +17,10 @@ import { state } from 'aws-cognito-redux-saga'
 const required = value => (value ? undefined : 'Required')
 const email = value =>
   validator.isEmail(value) ? undefined : 'Not Valid Email'
+
+var request= new XMLHttpRequest();
+//const url = 'https://8rb4rkeuwh.execute-api.us-east-1.amazonaws.com/Prod/configs/';
+
 
 const style = {
   paper: {
@@ -43,6 +50,11 @@ const style = {
     marginBottom: '16px'
   },
   signInButton: {
+    marginBottom: '16px',
+    width: '80%'
+  },
+
+  tryButton: {
     marginBottom: '16px',
     width: '80%'
   },
@@ -76,6 +88,7 @@ class SignIn extends Component {
     this.props.init()
   }
 
+
   signIn = values => {
     if (this.props.auth.isConfirmed === state.AUTH_SUCCESS) {
       this.props.signIn(values.email, values.password)
@@ -86,7 +99,7 @@ class SignIn extends Component {
 
   componentDidUpdate() {
     if (this.props.auth.isSignedIn === state.AUTH_SUCCESS) {
-      this.props.history.push('/protected')
+    window.location= "https://react.account.tools"
     }
   }
 
@@ -167,8 +180,12 @@ class SignIn extends Component {
               style={style.signup}
               containerElement={<Link to="/signup" />}
             >
+
+
               Sign Up
             </FlatButton>
+
+
 
             <FlatButton
               style={style.signup}
@@ -187,6 +204,7 @@ class SignIn extends Component {
     if (auth.passwordResetRequired === state.AUTH_SUCCESS) {
       return this.renderPasswordReset()
     } else {
+
       return this.renderSignIn()
     }
   }

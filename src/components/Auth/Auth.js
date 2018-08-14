@@ -9,11 +9,11 @@ class Auth extends React.Component {
   }
 
   componentWillMount() {
-    config.config.set({
+    config.config.set({ //AWS Cognito userpoll and identity pool information
       region: 'us-east-1',
-      IdentityPoolId: '',
-      UserPoolId: 'us-east-1_EEtXcO2PV',
-      ClientId: '79c2ieo8ubsibcqn7msk19ea89'
+      IdentityPoolId: 'us-east-1:ac97b5c5-b43d-4bed-860b-28dd4fe4dd73',
+      UserPoolId: 'us-east-1_7mB8ENyl5',
+      ClientId: '38o9onkvslhdigqkhv4fi1homg'
     })
 
     this.props.getUser()

@@ -4,7 +4,7 @@
   "description": "aws-cognito-react primary goal is to provide user management services for a web App in a scalable serverless way.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/dbroadhurst/aws-cognito-react"
+    "url": "git+https://github.com/dbroadhurst/aws-cognito-react.git"
   },
   "keywords": [
     "aws",
@@ -19,6 +19,7 @@
   "homepage": "http://cognito.dbroadhurst.net",
   "license": "MIT",
   "dependencies": {
+    "aws-amplify": "^0.4.4",
     "aws-cognito-redux-saga": "^1.5.7",
     "material-ui": "^0.20.0",
     "react": "^16.2.0",
@@ -39,5 +40,12 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "server": "http-server build"
+  },
+  "bugs": {
+    "url": "https://github.com/dbroadhurst/aws-cognito-react/issues"
+  },
+  "main": "index.js",
+  "devDependencies": {
+    "eslint": "^5.0.1"
   }
 }

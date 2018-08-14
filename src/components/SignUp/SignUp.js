@@ -67,7 +67,8 @@ class SignUp extends Component {
   }
 
   componentWillMount() {
-    this.props.init()
+  this.props.init()
+
   }
 
   signUp = values => {

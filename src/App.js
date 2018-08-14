@@ -11,6 +11,12 @@ import ChangePassword from './components/ChangePassword'
 import ForceChangePassword from './components/ForceChangePassword'
 import Header from './components/Header'
 import Auth from './components/Auth'
+import AddConfig from './components/PrivateRoute'
+import ConfigApp from './components/ResetPassword'
+import ConfigItem from './components/ChangePassword'
+import Cofigs from './components/ForceChangePassword'
+import UpdateEnviromentVars from './components/Header'
+import UpdateValidationRules from './components/Auth'
 import PrivateRoute from './components/PrivateRoute'
 
 import { HashRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
@@ -31,26 +37,25 @@ class App extends React.Component {
             <Auth />
             <Header />
             <Switch>
-              <PrivateRoute path="/protected" component={Protected} />
+
               <Route path="/signin" component={SignIn} />
-              <Route path="/signup" component={SignUp} />
+            //  <Route path="/signup" component={SignUp} />
               <Route path="/resetpassword" component={ResetPassword} />
               <Route path="/changepassword" component={ChangePassword} />
-              <Route
-                path="/forcechangepassword"
-                component={ForceChangePassword}
-              />
-              <Route path="/landing" component={Landing} />
 
-              <Route
-                path="/"
-                render={() =>
-                  auth.isSignedIn === state.AUTH_SUCCESS ? (
-                    <Redirect to="/protected" />
-                  ) : (
-                    <Redirect to="/landing" />
-                  )
-                }
+
+              <Route path="/landing" component={Landing} />
+              <Route path="/signup" component={SignUp} />
+
+            <Route
+              //  path="/"
+              //  render={() =>
+                //  auth.isSignedIn === state.AUTH_SUCCESS ? (
+                  //  <Redirect to="/Landing" />
+                  //) : (
+                  //  <Redirect to="/LandingComponent" />
+                  //)
+              //  }
               />
             </Switch>
           </div>
